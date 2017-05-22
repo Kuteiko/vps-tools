@@ -1,8 +1,7 @@
 <?php
 	namespace tests\components;
 
-	use Yii;
-	use vps\tools\components\Notification;
+	use vps\tools\modules\notification\components\Notification;
 
 	class NotificationTest extends \PHPUnit\Framework\TestCase
 	{
