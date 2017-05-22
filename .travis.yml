@@ -45,7 +45,7 @@ script:
   # validate composer.json
   - composer validate --no-check-lock
   # run PHPUnit
-  - ./vendor/bin/phpunit
+  - phpunit --configuration tests/phpunit.xml
 
 after_script:
   - |
