@@ -4,7 +4,7 @@
 	use Yii;
 	use vps\tools\components\Notification;
 
-	class NotificationTest extends \PHPUnit_Framework_TestCase
+	class NotificationTest extends \PHPUnit\Framework\TestCase
 	{
 		public function testConstruct ()
 		{

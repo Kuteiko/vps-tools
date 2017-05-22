@@ -1,11 +1,11 @@
 <?php
 	namespace tests\helpers;
 
-	use Yii;
 	use vps\tools\helpers\TimeHelper;
-	use \yii\base\InvalidParamException;
+	use Yii;
+	use yii\base\InvalidParamException;
 
-	class TimeHelperTest extends \PHPUnit_Framework_TestCase
+	class TimeHelperTest extends \PHPUnit\Framework\TestCase
 	{
 		public function testCdate ()
 		{
