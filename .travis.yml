@@ -1,6 +1,11 @@
 language: php
 php:
-  - '7.0'
+  - 5.4
+  - 5.5
+  - 5.6
+  - 7.0
+  - 7.1
+  - nightly
 
 
 services:
@@ -35,20 +40,9 @@ before_script:
   - mysql -e "CREATE USER 'vps_tools_test'@'localhost' IDENTIFIED BY '123';";
   - mysql -u root -e "GRANT ALL ON vps_tools_test.* TO 'vps_tools_test'@'localhost';";
 
-  # enable code coverage on PHP 7.1, only one PHP version needs to generate coverage data
-  - |
-    if [ $TRAVIS_PHP_VERSION = '7.1' ]; then
-      PHPUNIT_FLAGS="--coverage-clover=coverage.clover"
-    fi
 script:
   # validate composer.json
   - composer validate --no-check-lock
   # run PHPUnit
-  - vendor/phpunit/phpunit/phpunit --configuration tests/phpunit.xml
+  - vendor/phpunit/phpunit/phpunit --configuration tests/phpunit.xml --stderr
 
-after_script:
-  - |
-    if [ $TRAVIS_PHP_VERSION = '7.1' ]; then
-      travis_retry wget https://scrutinizer-ci.com/ocular.phar
-      php ocular.phar code-coverage:upload --format=php-clover coverage.clover
-    fi
