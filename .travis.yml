@@ -33,7 +33,7 @@ before_script:
   # initialize databases
   - mysql -e 'CREATE DATABASE `vps_tools_test`;';
   - mysql -e "CREATE USER 'vps_tools_test'@'localhost' IDENTIFIED BY '123';";
-  - mysql -e "GRANT ALL ON vps_tools_test.* TO 'vps_tools_test'@'localhost';";
+  - mysql -u root -e "GRANT ALL ON vps_tools_test.* TO 'vps_tools_test'@'localhost';";
 
   # enable code coverage on PHP 7.1, only one PHP version needs to generate coverage data
   - |
