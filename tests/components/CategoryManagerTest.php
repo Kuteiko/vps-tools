@@ -1,9 +1,10 @@
 <?php
 	namespace tests\components;
 
+	use PHPUnit_Framework_TestCase;
 	use Yii;
 
-	class CategoryManagerTest extends \PHPUnit_Framework_TestCase
+	class CategoryManagerTest extends PHPUnit_Framework_TestCase
 	{
 		private $_category;
 		private $_modelClass = 'tests\models\Category';
