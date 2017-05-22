@@ -1,8 +1,8 @@
 <?php
 	namespace tests\components;
 
-	use vps\tools\components\Notification;
-	use vps\tools\components\NotificationManager;
+	use vps\tools\modules\notification\components\Notification;
+	use vps\tools\modules\notification\components\NotificationManager;
 
 	class NotificationManagerTest extends \PHPUnit\Framework\TestCase
 	{
